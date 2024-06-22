@@ -1,0 +1,46 @@
+
+Ch8.2 Webpack
+
+    1) npm init -y
+    2) npm i -D webpack webpack-cli webpack-dev-server@next
+    3) package.json 파일에서 scripts 부분 수정
+    4) index.html 생성 후 reset.css 연결
+    5) js 폴더 생성 후 main.js 생성
+    6) webpack.config.js 파일 생성 후 구성 옵션 작성
+    7) npm i -D html-webpack-plugin
+    8) webpack.config.js 파일에 구성 옵션 작성
+       entry 파일인 main.js 에서 index.html을 plugin으로 활용
+       dist폴더에 index.html 자동 생성됨
+    9) npm run dev 실행해서 index.html / main.js 정상 동작하는지 확인
+    10) favicon.ico / logo.png 파일 준비
+    11) static 폴더 생성 후 하위 폴더 images 생성
+    12) favicon.ico 는 static 폴더에, logo.png 는 images 폴더에
+    13) index.html 에서 img 태그로 logo.png파일 연결
+    14) npm i -D copy-webpack-plugin 설치
+    15) webpack.config.js 파일에서 copy-webpack-plugin 불러오기
+        아래 plugins에도 추가 -> static 폴더를 dist 폴더로 copy 함!!
+    16) npm run dev 실행해서 정상 동작 확인!!
+    17) npm run build를 실행하면, dist폴더에 copy 되었음을 확인!!
+    18) static 폴더 내 css 폴더 생성하고, main.css 파일 작성
+    19) index.html에 css 연결
+    20) css 연결하는 다른 방법
+      * css 폴더를 root 폴더로 이동
+      * main.js 에서 css를 import
+        import "./css/main.css"
+      * npn i -D css-loader style-loader 설치
+      * webpack.config.js 에 module 내용 추가!!
+    21) css 폴더 및 파일을 scss로 변경
+    22) main.js 에서 scss 경로 및 파일명 수정
+    23) webpack.config.js 에서 module의 css도 scss로 수정
+    24) npm i -D sass-loader sass 설치
+    25) webpack.config.js 에서 use에 sass-loader 추가!! 순서 주의!!
+    26) css 문법으로 작성된 부분을 scss 문법으로 수정 
+    27) scss 에 display: flex; 추가 (autoprefixer 정상 작동 확인용)
+    28) npm i -D postcss autoprefixer postcss-loader 설치
+    29) webpack.config.js 에서 use에 postcss-loader 추가!! 순서 주의!!
+    30) package.json에 browserslist 부분 추가
+    31) .postcssrc.js 생성
+    32) npm i -D @babel/core @babel/preset-env @babel/plugin-transform-runtime 설치
+    33) .babelrc.js 생성
+    34) webpack.config.js 에서 module의 rules 부분에 babel 관련 내용 추가
+    35) npm i -D babel-loader 설치
